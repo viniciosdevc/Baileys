@@ -1,2 +1,4 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+package.json merge=ours
+yarn.lock merge=ours

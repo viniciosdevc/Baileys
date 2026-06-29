@@ -1,8 +1,8 @@
-import type { WAMediaUpload } from './Message'
+import { WAMediaUpload } from './Message'
 
 export type CatalogResult = {
 	data: {
-		paging: { cursors: { before: string; after: string } }
+		paging: { cursors: { before: string, after: string } }
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		data: any[]
 	}

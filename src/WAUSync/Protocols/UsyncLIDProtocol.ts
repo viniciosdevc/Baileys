@@ -1,6 +1,5 @@
-import type { USyncQueryProtocol } from '../../Types/USync'
-import type { BinaryNode } from '../../WABinary'
-import type { USyncUser } from '../USyncUser'
+import { USyncQueryProtocol } from '../../Types/USync'
+import { BinaryNode } from '../../WABinary'
 
 export class USyncLIDProtocol implements USyncQueryProtocol {
 	name = 'lid'
@@ -8,24 +7,17 @@ export class USyncLIDProtocol implements USyncQueryProtocol {
 	getQueryElement(): BinaryNode {
 		return {
 			tag: 'lid',
-			attrs: {}
+			attrs: {},
 		}
 	}
 
-	getUserElement(user: USyncUser): BinaryNode | null {
-		if (user.lid) {
-			return {
-				tag: 'lid',
-				attrs: { jid: user.lid }
-			}
-		} else {
-			return null
-		}
+	getUserElement(): null {
+		return null
 	}
 
 	parser(node: BinaryNode): string | null {
-		if (node.tag === 'lid') {
-			return node.attrs.val!
+		if(node.tag === 'lid') {
+			return node.attrs.val
 		}
 
 		return null
